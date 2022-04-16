@@ -49,4 +49,6 @@
   color: gray;
 }
 
-.sidebar__chats {}
+.sidebar__chats {
+  background-color: white;
+}
