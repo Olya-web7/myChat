@@ -11,7 +11,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
       <div className='sidebar__header'>
-        <Avatar />
+        <Avatar src='https://avatars.dicebear.com/api/bottts/your-custom-seed.svg'/>
         <div className="sidebar__headerRight">
           <IconButton><DonutLargeIcon /></IconButton>
           <IconButton><ChatIcon /></IconButton>   
