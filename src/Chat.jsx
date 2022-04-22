@@ -27,7 +27,9 @@ function Chat() {
           <IconButton><MoreVertIcon /></IconButton>
         </div>
       </div>
-      <div className="body"></div>
+      <div className="chat__body">
+        <p className="chat__message">Hey guys</p>
+      </div>
       <div className="chat__footer"></div>
     </div>
   )
