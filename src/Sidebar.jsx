@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Avatar, IconButton } from '@mui/material';
-import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import ChatIcon from '@mui/icons-material/Chat';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Avatar } from '@mui/material';
 import './Sidebar.css';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
@@ -26,11 +23,6 @@ function Sidebar() {
     <div className='sidebar'>
       <div className='sidebar__header'>
         <Avatar />
-        <div className="sidebar__headerRight">
-          <IconButton><DonutLargeIcon /></IconButton>
-          <IconButton><ChatIcon /></IconButton>   
-          <IconButton><MoreVertIcon /></IconButton>          
-        </div>
       </div> 
 
       <div className='sidebar__search'>
