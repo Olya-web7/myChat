@@ -2,11 +2,11 @@ import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './SidebarChat.css';
 
-function SidebarChat({ addNewChat}) {
+function SidebarChat({ id, name, addNewChat}) {
   const [seed, setSeed] = useState('');
 
   useEffect(() => {
-    setSeed(Math.floor(Math.random() * 500));
+    setSeed(Math.floor(Math.random() * 5000));
   }, []);
 
   const createChat = () => {
@@ -21,7 +21,7 @@ function SidebarChat({ addNewChat}) {
     <div className='sidebarChat'>
       <Avatar src={`https://avatars.dicebear.com/api/croodles/${seed}.svg`}/>
       <div className="sidebarChat__info">
-        <h3>room name</h3>
+        <h3>{name}</h3>
         <p>last message ...</p>
       </div>
     </div>
