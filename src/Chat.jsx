@@ -9,14 +9,15 @@ import db from './firebase';
 function Chat() {
   const [input, setInput] = useState('');
   const [seed, setSeed] = useState('');
-  const {roomId} = useParams();
+  const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
 
   useEffect(() => {
     if (roomId) {
-      db.collection('rooms').doc(roomId).onSnapshot(onSnapshot => (
-        setRoomName(onSnapshot.data().name)
-      ))
+      db.collection('rooms')
+        .doc(roomId)
+        .onSnapshot(onSnapshot => setRoomName
+          (onSnapshot.data().name));
     }
   }, [roomId])
 
