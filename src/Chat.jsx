@@ -1,8 +1,5 @@
-import { Avatar, IconButton } from '@mui/material';
+import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import MicIcon from '@mui/icons-material/Mic';
 import { useParams } from 'react-router-dom';
@@ -44,11 +41,6 @@ function Chat() {
           <p>Last seen at...</p>
         </div>
 
-        <div className="chat__headerRight">
-          <IconButton><SearchOutlinedIcon /></IconButton>
-          <IconButton><AttachFileIcon /></IconButton>
-          <IconButton><MoreVertIcon /></IconButton>
-        </div>
       </div>
       <div className="chat__body">
         <p className={`chat__message ${true && 'chat__receiver'}`}>

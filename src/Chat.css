@@ -47,12 +47,6 @@
   font-size: xx-small;
 }
 
-.chat__headerRight {
-  display: flex;
-  justify-content: space-between;
-  min-width: 100px;
-}
-
 .chat__body {
   flex: 1;  
   background-image: url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
