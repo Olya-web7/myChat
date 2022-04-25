@@ -8,13 +8,14 @@ function App() {
     <div className="app">
       <div className="app__body">
         <Router>
+            <Sidebar />
           <Switch>
-            <Route path='/app'>
-              <Sidebar />
+
+            <Route path="/rooms/:roomId">
               <Chat />
             </Route>
-            <Route path='/'>
-              <h1>home</h1>
+            <Route path="/">
+              <Chat />
             </Route>
           </Switch>
         </Router>
