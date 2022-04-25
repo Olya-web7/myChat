@@ -59,7 +59,7 @@
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .chat__footer {
