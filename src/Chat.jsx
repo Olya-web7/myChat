@@ -1,7 +1,5 @@
 import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-import MicIcon from '@mui/icons-material/Mic';
 import { useParams } from 'react-router-dom';
 import db from './firebase';
 import { useStateValue } from './StateProvider';
@@ -66,7 +64,6 @@ function Chat() {
         ))}
       </div>
       <div className="chat__footer">
-        <InsertEmoticonIcon />
         <form>
           <input value={input} onChange={(e) => setInput(e.target.value)}
             placeholder='Type a messsage' 
@@ -74,7 +71,6 @@ function Chat() {
           <button onClick={sendMessage}
             type='submit'>Send a message</button>
         </form>
-        <MicIcon />
       </div>
     </div>
   )

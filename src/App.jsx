@@ -2,9 +2,9 @@ import './App.css';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { useState } from 'react';
+// import { useState } from 'react';
 import Login from './Login';
-import { actionTypes } from './reducer';
+// import { actionTypes } from './reducer';
 import { useStateValue } from './StateProvider';
 
 function App() {
