@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useState } from 'react';
 import Login from './Login';
 import { actionTypes } from './reducer';
-// import { RestoreOutlined } from '@mui/icons-material';
 import { useStateValue } from './StateProvider';
 
 function App() {

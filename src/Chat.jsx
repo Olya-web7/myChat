@@ -5,6 +5,8 @@ import MicIcon from '@mui/icons-material/Mic';
 import { useParams } from 'react-router-dom';
 import './Chat.css';
 import db from './firebase';
+import { useStateValue } from './StateProvider';
+import firebase from 'firebase/compat/app';
 
 function Chat() {
   const [input, setInput] = useState('');
@@ -12,6 +14,7 @@ function Chat() {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
   const [messages, setMessages] = useState([]);
+  const [{user}, dispatch] = useStateValue();
 
   useEffect(() => {
     if (roomId) {
@@ -38,6 +41,13 @@ function Chat() {
   const sendMessage = (e) => {
     e.preventDefault();
     console.log('you typed >>>>', input);
+
+    db.collection('rooms').doc(roomId).collection('messages').add({
+      message: input,
+      name: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
     setInput('');
   };
 
