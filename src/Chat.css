@@ -31,13 +31,6 @@
   margin-bottom: 30px;
 }
 
-.chat__name {
-  position: absolute;
-  top: -15px;
-  font-size: xx-small;
-  font-weight: 700;
-}
-
 .chat__receiver {
   margin-left: auto;
   background-color: #dcf8c6;

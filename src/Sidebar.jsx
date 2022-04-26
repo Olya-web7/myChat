@@ -19,6 +19,10 @@ function Sidebar() {
         }))
       )
     );
+
+    // return () => {
+    //   unsubscribe();
+    // };
   }, [])
 
   return (
