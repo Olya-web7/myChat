@@ -5,6 +5,18 @@ import db from './firebase';
 import { Link } from 'react-router-dom';
 
 function SidebarChat({ id, name, addNewChat}) {
+  const [messages, setMessages] = useState('');
+
+  useEffect(() => {
+    if (id) {
+      db.collection('rooms')
+        .doc(id)
+        .collection('messsages')
+        .orderBy('timestamp', 'desc')
+        .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => doc.data()))
+      );
+    }
+  }, []);
 
   const createChat = () => {
     const roomName = prompt("Please enter name for chat");
@@ -22,7 +34,7 @@ function SidebarChat({ id, name, addNewChat}) {
       <Avatar />
       <div className="sidebarChat__info">
         <h3>{name}</h3>
-        <p>last message ...</p>
+        <p>{messages[0]?.message}</p>
       </div>
     </div>
     </Link>
