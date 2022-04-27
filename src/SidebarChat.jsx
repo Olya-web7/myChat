@@ -13,10 +13,12 @@ function SidebarChat({ id, name, addNewChat}) {
         .doc(id)
         .collection('messsages')
         .orderBy('timestamp', 'desc')
-        .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => doc.data()))
-      );
+        .onSnapshot((snapshot) => 
+          setMessages(snapshot.docs.map((doc) => 
+          doc.data()))
+        );
     }
-  }, []);
+  }, [id]);
 
   const createChat = () => {
     const roomName = prompt("Please enter name for chat");
