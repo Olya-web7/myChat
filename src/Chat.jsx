@@ -53,7 +53,8 @@ function Chat() {
     };
 
   useEffect(() => {
-    setTimeout(() => fetchPost(), 10000)
+    const timer = setTimeout(() => fetchPost(), 15000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
