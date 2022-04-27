@@ -33,14 +33,12 @@ function Chat() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log('you typed >>>>', input);
 
     db.collection('rooms').doc(roomId).collection('messages').add({
       message: input,
       name: user.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
-
     setInput('');
   };
 
@@ -71,7 +69,7 @@ function Chat() {
 
       </div>
       <div className="chat__body">
-        {messages.map(message => (
+        {messages.map((message) => (
           <div>
             <p 
             className={`chat__message ${
