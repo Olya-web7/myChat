@@ -49,7 +49,8 @@ function Chat() {
         <Avatar />
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
-          <p>{new Date(
+          <p>last seen{" "}
+            {new Date(
             messages[messages.length - 1]?.timestamp?.toDate()
           ).toUTCString()}</p>
         </div>
