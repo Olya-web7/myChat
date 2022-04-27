@@ -10,8 +10,9 @@ function Chat() {
   const [input, setInput] = useState('');
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
-  const [messages, setMessages] = useState([]);
   const [{user}, dispatch] = useStateValue();
+  const [messages, setMessages] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     if (roomId) {
@@ -43,6 +44,18 @@ function Chat() {
     setInput('');
   };
 
+    const fetchPost = async () => {
+      const response = await fetch(
+        "https://api.chucknorris.io/jokes/random"
+      );
+      const postData = await response.json();
+      setPosts(postData);
+    };
+
+  useEffect(() => {
+    setTimeout(() => fetchPost(), 10000)
+  }, []);
+
   return (
     <div className='chat'>
       <div className="chat__header">
@@ -60,13 +73,12 @@ function Chat() {
         {messages.map(message => (
           <p 
             className={`chat__message ${
-              message.name === user.displayName 
-              && 'chat__receiver'}`}>
-            {message.message}
+              message.name === user.displayName && 'chat__receiver'}`}>
+            { message.name === user.displayName ? posts.value : message.message }            
             <span className="chat__timestamp">
               {new Date(message.timestamp?.toDate()).toUTCString()}
             </span>
-          </p>        
+          </p>                  
         ))}
       </div>
       <div className="chat__footer">
