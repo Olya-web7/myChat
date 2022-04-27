@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Avatar } from '@mui/material';
 import './Sidebar.css';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import SidebarChat from './SidebarChat';
-import db from "./firebase";
-import { useStateValue } from './StateProvider';
+import SidebarChat from '../sidebarchat/SidebarChat';
+import db from "../../firebase";
+import { useStateValue } from '../../StateProvider';
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  // eslint-disable-next-line
   const [{user}, dispatch] = useStateValue();
 
   useEffect(() => {

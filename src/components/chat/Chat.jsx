@@ -1,8 +1,8 @@
 import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import db from '../firebase';
-import { useStateValue } from '../StateProvider';
+import db from '../../firebase';
+import { useStateValue } from '../../StateProvider';
 import firebase from 'firebase/compat/app';
 import './Chat.css';
 

@@ -1,9 +1,9 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { auth, provider } from '../firebase';
+import { auth, provider } from '../../firebase';
 import './Login.css'
-import { actionTypes } from '../reducer';
-import { useStateValue } from '../StateProvider';
+import { actionTypes } from '../../reducer';
+import { useStateValue } from '../../StateProvider';
 
 function Login() {
   // eslint-disable-next-line
